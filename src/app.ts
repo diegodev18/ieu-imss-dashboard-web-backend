@@ -1,12 +1,16 @@
-import express from "express";
+import express, { Router } from "express";
 
 import { SERVER_PORT } from "@/config";
 
 const app = express();
 
-app.get("/", (_req, res) => {
+const router = Router();
+
+router.get("/", (_req, res) => {
   res.send("Hello, World!");
 });
+
+app.use("/api", router);
 
 app.listen(SERVER_PORT, (err) => {
   if (err) {
