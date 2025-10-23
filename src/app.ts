@@ -8,8 +8,12 @@ app.get("/", (_req, res) => {
   res.send("Hello, World!");
 });
 
-app.listen(SERVER_PORT, () => {
-  console.log(
-    `Server is running on http://localhost:${SERVER_PORT.toString()}`,
-  );
+app.listen(SERVER_PORT, (err) => {
+  if (err) {
+    console.error("Error starting server:", err);
+  } else {
+    console.log(
+      `Server is running on http://localhost:${SERVER_PORT.toString()}`,
+    );
+  }
 });
