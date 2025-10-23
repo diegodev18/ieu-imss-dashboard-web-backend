@@ -1,6 +1,6 @@
 import express from "express";
 
-import { EXPRESS_PORT } from "@/config.js";
+import { EXPRESS_PORT } from "@/config";
 
 const app = express();
 
